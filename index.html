@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple interactive to-do list">
+  <title>My To-Do List</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="todo-container">
+    <h1>My To-Do List 📝</h1>
+    <p class="subtitle">Organize your day, one task at a time.</p>
+
+    <form id="form">
+      <input
+        type="text"
+        id="text"
+        placeholder="Enter a new task..."
+        aria-label="New task"
+        autocomplete="off"
+      >
+      <button type="submit">Add Task</button>
+    </form>
+
+    <div class="filters" aria-label="Filter tasks">
+      <button type="button" data-filter="all">All</button>
+      <button type="button" data-filter="active">Active</button>
+      <button type="button" data-filter="done">Done</button>
+    </div>
+
+    <ul id="list" aria-label="Your tasks"></ul>
+
+    <div class="footer">
+      <p id="count">0 left</p>
+      <button type="button" id="clear-completed">
+        Clear Completed
+      </button>
+    </div>
+  </main>
+</body>
+</html>

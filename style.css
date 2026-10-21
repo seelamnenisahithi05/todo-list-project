@@ -1,0 +1,161 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff, #fce7f3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  color: #1f2937;
+}
+
+.todo-container {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #4338ca;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+#form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#text {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 11px 14px;
+  background: #4f46e5;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3730a3;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 2px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.filters button:hover,
+.filters button.active {
+  background: #4f46e5;
+  color: white;
+}
+
+#list {
+  list-style: none;
+}
+
+#list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#list li span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+#list li.done span {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+#list li button {
+  padding: 8px 10px;
+}
+
+#list li button[data-action="delete"] {
+  background: #dc2626;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+#count {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+#clear-completed {
+  background: #374151;
+}
+
+@media (max-width: 480px) {
+  .todo-container {
+    padding: 20px;
+  }
+
+  #form {
+    flex-direction: column;
+  }
+
+  #form button {
+    width: 100%;
+  }
+
+  #list li {
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
